@@ -1,7 +1,7 @@
 package addtwonumbers;
 
 class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         boolean carryover = false;
 
         int sum = l1.val + l2.val;
@@ -116,7 +116,7 @@ class Solution {
         return head;
     }
 
-    public ListNode addTwoNumbersToInt(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbersToInt(ListNode l1, ListNode l2) {
         int a = listNodeToInt(l1);
         int b = listNodeToInt(l2);
         return intToListNode(a + b);
@@ -134,7 +134,7 @@ class Solution {
         tmp = tmp.next;
         tmp.next = new ListNode(4);
 
-        tmp = (new Solution()).addTwoNumbers(l1, l2);
+        tmp = Solution.addTwoNumbers(l1, l2);
         while (tmp != null) {
             System.out.println(tmp.val);
             tmp = tmp.next;

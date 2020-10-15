@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Solution {
-    public int[] twoSumLoop(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; ++i) {
             for (int j = i + 1; j < nums.length; ++j) {
                 if (nums[i] + nums[j] == target) {
@@ -15,7 +15,7 @@ class Solution {
         throw new IllegalArgumentException("No two sum solution");
     }
 
-    public int[] twoSumHasMap(int[] nums, int target) {
+    public static int[] twoSumHasMap(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
@@ -25,5 +25,11 @@ class Solution {
             map.put(nums[i], i);
         }
         throw new IllegalArgumentException("No two sum solution");
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[] {2,7,11,15};
+        int target = 9;
+        System.out.println(Solution.twoSum(nums, target));
     }
 }
