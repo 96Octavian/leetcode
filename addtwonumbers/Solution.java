@@ -1,6 +1,6 @@
 package addtwonumbers;
 
-class Solution {
+public class Solution {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         boolean carryover = false;
 
@@ -123,21 +123,25 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        ListNode tmp, l1 = new ListNode(2), l2 = new ListNode(5);
-        tmp = l1;
-        tmp.next = new ListNode(4);
-        tmp = tmp.next;
-        tmp.next = new ListNode(3);
+        ListNode res, l1 = new ListNode(2), l2 = new ListNode(5);
+        res = l1;
+        res.next = new ListNode(4);
+        res = res.next;
+        res.next = new ListNode(3);
 
-        tmp = l2;
-        tmp.next = new ListNode(6);
-        tmp = tmp.next;
-        tmp.next = new ListNode(4);
+        res = l2;
+        res.next = new ListNode(6);
+        res = res.next;
+        res.next = new ListNode(4);
 
-        tmp = Solution.addTwoNumbers(l1, l2);
-        while (tmp != null) {
-            System.out.println(tmp.val);
-            tmp = tmp.next;
+        res = Solution.addTwoNumbers(l1, l2);
+        System.out.print("[");
+        while (res != null) {
+            System.out.print(res.val);
+            res = res.next;
+            if (res != null)
+                System.out.print(", ");
         }
+        System.out.println("]");
     }
 }

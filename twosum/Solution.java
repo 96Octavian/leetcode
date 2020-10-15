@@ -3,7 +3,7 @@ package twosum;
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution {
+public class Solution {
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; ++i) {
             for (int j = i + 1; j < nums.length; ++j) {
@@ -28,8 +28,17 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[] {2,7,11,15};
+        int[] nums = new int[] { 2, 7, 11, 15 };
         int target = 9;
-        System.out.println(Solution.twoSum(nums, target));
+
+        int[] res = Solution.twoSum(nums, target);
+        System.out.print(res.toString());
+        System.out.print("[");
+        for (int i = 0; i < res.length; ++i) {
+            System.out.print(res[i]);
+            if (i + 1 < res.length)
+                System.out.print(", ");
+        }
+        System.out.println("]");
     }
 }
